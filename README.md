@@ -21,6 +21,28 @@ The results are exported as structured statistics for further analysis.
 
 ## Usage
 
+### Running on Brainlife.io
+
+You can run the `dsi-studio-trk-ana` app on the Brainlife.io platform via the web user interface (UI) or using the Brainlife CLI. With both methods, inputs and outputs are managed on the Brainlife.io platform, and computations are performed using its cloud computing resources.
+
+#### On Brainlife.io via UI
+
+1. Navigate to the Brainlife.io platform and locate the `dsi-studio-trk-ana` app.
+2. Click the "Execute" tab and specify the required dataset inputs.
+
+#### On Brainlife.io using CLI
+
+1. Install the Brainlife CLI on your UNIX/Linux-based system by following the instructions at [Brainlife CLI Installation](https://brainlife.io/docs/cli/install/).
+2. Log in to the Brainlife CLI using your Brainlife.io credentials:
+   ```bash
+   bl login
+   ```
+3. Run the app using the following command:
+   ```bash
+   bl app run --id <app_id> --project <project_id> --input src:<src_object_id> --input track:<tt_object_id>
+   ```
+   The output will be stored in the specified project identified by `<project_id>`.
+
 ### Running Locally (on your machine)
 
 Follow these steps to run the script locally on your machine:
@@ -51,27 +73,7 @@ Follow these steps to run the script locally on your machine:
 #### Requirements
 - **Singularity**: Ensure Singularity is installed and accessible.
 
-### Running on Brainlife.io
 
-You can run the `dsi-studio-trk-ana` app on the Brainlife.io platform via the web user interface (UI) or using the Brainlife CLI. With both methods, inputs and outputs are managed on the Brainlife.io platform, and computations are performed using its cloud computing resources.
-
-#### On Brainlife.io via UI
-
-1. Navigate to the Brainlife.io platform and locate the `dsi-studio-trk-ana` app.
-2. Click the "Execute" tab and specify the required dataset inputs.
-
-#### On Brainlife.io using CLI
-
-1. Install the Brainlife CLI on your UNIX/Linux-based system by following the instructions at [Brainlife CLI Installation](https://brainlife.io/docs/cli/install/).
-2. Log in to the Brainlife CLI using your Brainlife.io credentials:
-   ```bash
-   bl login
-   ```
-3. Run the app using the following command:
-   ```bash
-   bl app run --id <app_id> --project <project_id> --input src:<src_object_id> --input track:<tt_object_id>
-   ```
-   The output will be stored in the specified project identified by `<project_id>`.
 
 ## Outputs
 - **Statistics**: The results of the analysis will be stored in `stat/tractmeasure.tsv`.
