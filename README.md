@@ -1,6 +1,6 @@
 # dsi-studio-trk-ana
 
-This repository contains a script designed for the analysis of tractography data using [DSI Studio](http://dsi-studio.labsolver.org/). The script computes a range of tract properties, leveraging the computational capabilities of Singularity and Brainlife.io.
+This repository contains a script designed for the analysis of tractography data using [DSI Studio](http://dsi-studio.labsolver.org/). The script computes a range of tract properties as described in [Yeh, F. C. (2020)](https://doi.org/10.1016/j.neuroimage.2020.117329)
 
 ## Features
 This app computes detailed tract properties, including:
