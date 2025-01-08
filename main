@@ -14,3 +14,7 @@ mkdir -p ${outputdir}
 
 
 singularity exec --nv -e  docker://dsistudio/dsistudio:hou-2024-12-26 dsi_studio --action=ana --source="${src}" --tract="${tt}" --export=stat
+
+# move file to stat folder
+mkdir -p stat
+mv ${tt}".stat.txt" stat/tractmeasure.tsv
