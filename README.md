@@ -14,6 +14,11 @@ This app computes detailed tract properties, including:
 - **Irregularity**
 
 The results are exported as structured statistics for further analysis.
+
+### Author
+
+    Gabriele Amorosino (gabriele.amorosino@utexas.edu)
+
 ## Usage
 
 ### Running Locally (on your machine)
@@ -79,9 +84,4 @@ If you use this app in your research, please cite the following:
 
 - Brainlife.io:
   - Hayashi, Soichi, et al. "brainlife.io: a decentralized and open-source cloud platform to support neuroscience research." *Nature methods, 21*(5), 809-813. (2024). [https://doi.org/10.1038/s41592-024-02237-2](https://doi.org/10.1038/s41592-024-02237-2)
-
-## License
-This repository is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-For further assistance or inquiries, feel free to open an issue in this repository.
 
