@@ -57,6 +57,7 @@ Follow these steps to run the script locally on your machine:
    ```json
    {
        "tt": "/path/to/tract.trk"
+
    }
    ```
 
