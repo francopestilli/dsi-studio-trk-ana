@@ -1,0 +1,16 @@
+#!/bin/bash
+#PBS -l nodes=1:ppn=1
+#PBS -l vmem=8gb
+#PBS -l walltime=1:00:00
+#PBS -N dsi-studio-trk-ana
+
+##set -e  
+
+src=$(jq -r .src config.json)
+tt=$(jq -r .tt config.json)
+
+outputdir=${PWD}"/outputdir"
+mkdir -p ${outputdir}
+
+
+singularity exec --nv -e  docker://dsistudio/dsistudio:hou-2024-12-26 dsi_studio --action=ana --source="${src}" --tract="${tt}" --export=stat
