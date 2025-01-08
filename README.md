@@ -39,7 +39,7 @@ You can run the `dsi-studio-trk-ana` app on the Brainlife.io platform via the we
    ```
 3. Run the app using the following command:
    ```bash
-   bl app run --id <app_id> --project <project_id> --input src:<src_object_id> --input track:<tt_object_id>
+   bl app run --id <app_id> --project <project_id> --input tt:<tt_object_id>
    ```
    The output will be stored in the specified project identified by `<project_id>`.
 
@@ -56,7 +56,6 @@ Follow these steps to run the script locally on your machine:
 2. Create a `config.json` file in the repository directory, specifying the required input paths. Example:
    ```json
    {
-       "src": "/path/to/source.nii.gz",
        "tt": "/path/to/tract.trk"
    }
    ```

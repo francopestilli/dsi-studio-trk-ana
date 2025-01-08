@@ -4,13 +4,26 @@
 #PBS -l walltime=1:00:00
 #PBS -N dsi-studio-trk-ana
 
-##set -e  
+set -e  
 
-src=$(jq -r .src config.json)
 tt=$(jq -r .tt config.json)
 
-singularity exec --nv -e  docker://dsistudio/dsistudio:hou-2024-12-26 dsi_studio --action=ana --source="${src}" --tract="${tt}" --export=stat
+if [[ ! -f "$tt" ]]; then
+  echo "ERROR: Source or tract file does not exist. Check paths in config.json."
+  exit 1
+fi
 
-# move file to stat folder
+echo "Starting DSI Studio analysis..."
+singularity exec --nv -e docker://dsistudio/dsistudio:hou-2024-12-26 dsi_studio --action=ana --source="${tt}" --tract="${tt}" --export=stat
+
+# Move file to stat folder
 mkdir -p stat
-mv ${tt}".stat.txt" stat/tractmeasure.tsv
+if [[ -f "${tt}.stat.txt" ]]; then
+  mv "${tt}.stat.txt" stat/tractmeasure.tsv
+else
+  echo "ERROR: Output file not generated. Check DSI Studio logs."
+  exit 1
+fi
+
+echo "DSI Studio analysis completed successfully!"
+echo "Output file stored as: "stat/tractmeasure.tsv
