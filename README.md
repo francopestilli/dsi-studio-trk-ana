@@ -56,8 +56,8 @@ Follow these steps to run the script locally on your machine:
 2. Create a `config.json` file in the repository directory, specifying the required input paths. Example:
    ```json
    {
-       "src": "/path/to/source.nii.gz",
-       "tt": "/path/to/tract.trk"
+       "src": "/path/to/source.src.gz.sz",
+       "tt": "/path/to/tract.tt.gz"
    }
    ```
 
