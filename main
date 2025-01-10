@@ -25,5 +25,6 @@ else
   exit 1
 fi
 
+cat stat/tractmeasure.tsv
 echo "DSI Studio analysis completed successfully!"
 echo "Output file stored as: "stat/tractmeasure.tsv
