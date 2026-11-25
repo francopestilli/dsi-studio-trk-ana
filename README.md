@@ -1,5 +1,36 @@
 # dsi-studio-trk-ana
 
+<!-- brainlife-app:begin (generated from the App manifest; edit the manifest, not this block) -->
+
+> **Computes tract shape and size measures (length, span, volume, diameter, surface area, curl, elongation, irregularity) from a DSI Studio tinytrack file with DSI Studio and outputs a TSV table.**
+
+Runs dsi_studio --action=ana --export=stat on the tract file and stores the statistics as tractmeasure.tsv. Use it to quantify tract shape after tractography or bundle recognition in DSI Studio.
+
+| | |
+|---|---|
+| 📥 **Inputs** | `neuro/dsistudio/tinytrack` |
+| 📤 **Outputs** | `neuro/dsistudio/tractmeasures` |
+| 🐳 **Container** | `dsistudio/dsistudio:hou-2024-12-26` |
+| ⚙️ **Resources** | 1 CPUs |
+| 🔗 **Run it** | [doi.org/10.25663/brainlife.app.842](https://doi.org/10.25663/brainlife.app.842) |
+
+#### 📥 Inputs
+
+| Input | Datatype | Required | Description |
+|---|---|---|---|
+| `track` | `neuro/dsistudio/tinytrack` | yes | Tract file in DSI Studio tinytrack (.tt.gz) format. |
+
+#### 📤 Outputs
+
+| Output | Datatype | Description |
+|---|---|---|
+| `stats` | `neuro/dsistudio/tractmeasures` | Table of tract measures (tractmeasure.tsv). |
+
+📚 **References used by this App:**
+- Yeh FC. Shape analysis of the human association pathways. NeuroImage 223:117329 (2020). [doi:10.1016/j.neuroimage.2020.117329](https://doi.org/10.1016/j.neuroimage.2020.117329)
+
+<!-- brainlife-app:end -->
+
 This repository contains a script designed for the analysis of tractography data using [DSI Studio](http://dsi-studio.labsolver.org/). The script computes a range of tract properties as described in [Yeh, F. C. (2020)](https://doi.org/10.1016/j.neuroimage.2020.117329)
 
 ## Features
